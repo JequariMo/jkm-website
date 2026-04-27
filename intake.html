@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Client Intake | JKM Strategies</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+body { font-family: 'Inter', sans-serif; background: #020617; color: white; }
+
+.input-field {
+  background: #0f172a;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 1rem;
+  padding: 1rem;
+  width: 100%;
+  outline: none;
+  transition: all 0.3s;
+  color: white;
+}
+
+.input-field::placeholder {
+  color: rgba(255,255,255,0.4);
+}
+
+.input-field:focus {
+  border-color: #3b82f6;
+  background: #1e293b;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255,255,255,0.03);
+  padding: 12px;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255,255,255,0.05);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.checkbox-item:hover {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+select { color-scheme: dark; }
+* { -webkit-tap-highlight-color: transparent; }
+</style>
+</head>
+
+<body class="min-h-screen py-20 px-6">
+
+<div class="max-w-3xl mx-auto">
+
+<a href="index.html" class="text-blue-500 font-bold text-xs uppercase tracking-widest mb-12 inline-block hover:text-blue-400">
+← Back to Home
+</a>
+
+<header class="mb-12 text-center">
+<h1 class="text-4xl md:text-5xl font-black mb-6">
+Let’s Build Your <span class="text-blue-500 italic">Financial Strategy</span>
+</h1>
+
+<p class="text-slate-400 text-lg leading-relaxed max-w-2xl mx-auto">
+This is a structured analysis designed to identify inefficiencies, protect your assets, and optimize your financial system.
+</p>
+</header>
+
+<form name="client-intake" method="POST" data-netlify="true" action="/success.html" class="space-y-8">
+<input type="hidden" name="form-name" value="client-intake">
+
+<!-- NAME -->
+<div class="grid md:grid-cols-2 gap-6">
+<div>
+<label class="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">First Name</label>
+<input type="text" name="first_name" required class="input-field" placeholder="John">
+</div>
+<div>
+<label class="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">Last Name</label>
+<input type="text" name="last_name" required class="input-field" placeholder="Doe">
+</div>
+</div>
+
+<!-- CONTACT -->
+<div class="grid md:grid-cols-2 gap-6">
+<div>
+<label class="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">Email Address</label>
+<input type="email" name="email" required class="input-field" placeholder="john@example.com">
+</div>
+<div>
+<label class="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">Phone Number</label>
+<input type="tel" name="phone" required class="input-field" placeholder="(555) 000-0000">
+</div>
+</div>
+
+<!-- CLIENT TYPE -->
+<div>
+<label class="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">
+What best describes you?
+</label>
+<select name="client_type" required class="input-field">
+<option value="" disabled selected>Select option</option>
+<option>Athlete</option>
+<option>Business Owner</option>
+<option>Individual</option>
+</select>
+</div>
+
+<!-- PRIMARY GOAL -->
+<div>
+<label class="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">
+Primary Goal
+</label>
+<select name="goal" required class="input-field">
+<option value="" disabled selected>Select option</option>
+<option>Increase Cash Flow</option>
+<option>Reduce Taxes</option>
+<option>Protect Assets</option>
+<option>Build Long-Term Strategy</option>
+</select>
+</div>
+
+<!-- INTERESTS -->
+<div>
+<label class="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-4">
+Areas of Interest (Select all that apply)
+</label>
+
+<div class="grid md:grid-cols-2 gap-3">
+<label class="checkbox-item"><input type="checkbox" name="Revenue Growth"> Revenue Growth</label>
+<label class="checkbox-item"><input type="checkbox" name="Tax Strategy"> Tax Strategy</label>
+<label class="checkbox-item"><input type="checkbox" name="Bookkeeping"> Bookkeeping</label>
+<label class="checkbox-item"><input type="checkbox" name="Business Setup"> Business Setup</label>
+<label class="checkbox-item"><input type="checkbox" name="Insurance"> Insurance</label>
+<label class="checkbox-item"><input type="checkbox" name="Retirement"> Retirement</label>
+<label class="checkbox-item md:col-span-2"><input type="checkbox" name="Not Sure"> Not Sure / Need Guidance</label>
+</div>
+</div>
+
+<!-- NOTES -->
+<textarea name="notes" class="input-field" placeholder="Additional notes about your situation..."></textarea>
+
+<!-- CTA -->
+<button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 py-6 rounded-2xl font-bold text-xl transition">
+Request My Strategy
+</button>
+
+</form>
+</div>
+
+<!-- FOOTER -->
+<footer class="px-6 py-20 text-center border-t border-white/5 opacity-80">
+  <p class="text-[10px] font-bold tracking-[0.4em] uppercase mb-4 text-blue-500">
+    JKM Strategies LLC | Building Wealth. Securing Futures.
+  </p>
+  <p class="text-[9px] text-slate-500 uppercase tracking-widest italic leading-loose">
+    Analytical Precision. Human Connection.
+  </p>
+</footer>
+
+</body>
+</html>
