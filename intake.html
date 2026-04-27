@@ -49,11 +49,15 @@ body { font-family: 'Inter', sans-serif; background: #020617; color: white; }
 }
 
 select { color-scheme: dark; }
-* { -webkit-tap-highlight-color: transparent; }
 </style>
 </head>
 
 <body class="min-h-screen py-20 px-6">
+
+<!-- 🔥 NETLIFY DETECTION FALLBACK (CRITICAL) -->
+<form name="client-intake" netlify hidden>
+  <input type="text" name="first_name">
+</form>
 
 <div class="max-w-3xl mx-auto">
 
@@ -71,8 +75,21 @@ This is a structured analysis designed to identify inefficiencies, protect your 
 </p>
 </header>
 
-<form name="client-intake" method="POST" data-netlify="true" action="/success.html" class="space-y-8">
+<!-- ✅ NETLIFY FORM -->
+<form name="client-intake"
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      action="/success.html"
+      class="space-y-8">
+
 <input type="hidden" name="form-name" value="client-intake">
+<input type="hidden" name="subject" value="New Client Intake Submission">
+
+<!-- Honeypot -->
+<p class="hidden">
+  <label>Don’t fill this out: <input name="bot-field"></label>
+</p>
 
 <!-- NAME -->
 <div class="grid md:grid-cols-2 gap-6">
@@ -132,13 +149,13 @@ Areas of Interest (Select all that apply)
 </label>
 
 <div class="grid md:grid-cols-2 gap-3">
-<label class="checkbox-item"><input type="checkbox" name="Revenue Growth"> Revenue Growth</label>
-<label class="checkbox-item"><input type="checkbox" name="Tax Strategy"> Tax Strategy</label>
-<label class="checkbox-item"><input type="checkbox" name="Bookkeeping"> Bookkeeping</label>
-<label class="checkbox-item"><input type="checkbox" name="Business Setup"> Business Setup</label>
-<label class="checkbox-item"><input type="checkbox" name="Insurance"> Insurance</label>
-<label class="checkbox-item"><input type="checkbox" name="Retirement"> Retirement</label>
-<label class="checkbox-item md:col-span-2"><input type="checkbox" name="Not Sure"> Not Sure / Need Guidance</label>
+<label class="checkbox-item"><input type="checkbox" name="interests" value="Revenue Growth"> Revenue Growth</label>
+<label class="checkbox-item"><input type="checkbox" name="interests" value="Tax Strategy"> Tax Strategy</label>
+<label class="checkbox-item"><input type="checkbox" name="interests" value="Bookkeeping"> Bookkeeping</label>
+<label class="checkbox-item"><input type="checkbox" name="interests" value="Business Setup"> Business Setup</label>
+<label class="checkbox-item"><input type="checkbox" name="interests" value="Insurance"> Insurance</label>
+<label class="checkbox-item"><input type="checkbox" name="interests" value="Retirement"> Retirement</label>
+<label class="checkbox-item md:col-span-2"><input type="checkbox" name="interests" value="Not Sure"> Not Sure / Need Guidance</label>
 </div>
 </div>
 
