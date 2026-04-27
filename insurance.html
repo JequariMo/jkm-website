@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Asset Protection | JKM Strategies</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  color: white;
+
+  /* ✅ FULL BACKGROUND IMAGE (NO OVERLAY HERE) */
+  background: url('images/asset-hero.jpg') center 35% / cover no-repeat fixed;
+}
+
+/* NAV */
+.glass {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  display:flex;
+  align-items:center;
+  padding: 90px 16px 50px;
+}
+@media (min-width: 768px) {
+  .hero { padding: 120px 20px 80px; }
+}
+
+/* ✅ HERO-ONLY OVERLAY (CONTROLLED) */
+.hero::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    to right,
+    rgba(2,6,23,0.75) 0%,
+    rgba(2,6,23,0.55) 30%,
+    rgba(2,6,23,0.25) 60%,
+    rgba(2,6,23,0.05) 100%
+  );
+  z-index: 0;
+}
+
+/* CARD */
+.card {
+  background: rgba(15,23,42,0.85);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:28px;
+  transition:.3s;
+}
+.card:hover {
+  border-color:rgba(59,130,246,.6);
+  transform: translateY(-4px);
+}
+
+/* ICON */
+.icon {
+  width: 26px;
+  height: 26px;
+  stroke: #3b82f6;
+  stroke-width: 2;
+}
+
+/* MOBILE CTA */
+.mobile-cta {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(2,6,23,0.95);
+  padding: 10px 16px;
+  z-index: 50;
+}
+@media (min-width: 1024px) { .mobile-cta { display: none; } }
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="sticky top-0 z-50 glass border-b border-white/5">
+  <div class="flex justify-between items-center px-8 py-5">
+
+    <h1 class="text-xl font-extrabold tracking-tighter">
+      <a href="index.html">
+        JKM <span class="text-blue-500">STRATEGIES</span>
+        <span class="text-[10px] text-slate-500 ml-1 italic">LLC</span>
+      </a>
+    </h1>
+
+    <div class="hidden lg:flex items-center space-x-6 text-[10px] font-bold uppercase tracking-[0.2em]">
+      <a href="about.html" class="hover:text-blue-400 transition">About</a>
+      <a href="financial.html" class="hover:text-blue-400 transition">Business Analysis</a>
+      <a href="insurance.html" class="text-blue-400">Asset Protection</a>
+      <a href="athlete.html" class="text-slate-500 hover:text-blue-400 transition">Athlete/NIL</a>
+
+      <a href="intake.html" class="px-5 py-2.5 bg-blue-600 rounded-lg text-white hover:bg-blue-500 transition ml-4">
+        Protect My Assets
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="relative z-10 max-w-xl px-4">
+
+    <h1 class="text-3xl md:text-6xl font-extrabold mb-5 leading-tight">
+      Protect What You’ve Built.<br>
+      <span class="text-blue-500">Grow What’s Next.</span>
+    </h1>
+
+    <p class="text-slate-200 text-sm md:text-lg mb-6 leading-relaxed">
+      Build a financial structure designed to protect income, reduce risk, and sustain long-term growth. We help you build a system that works today and lasts for generations.
+    </p>
+
+    <a href="intake.html" class="bg-blue-600 px-5 py-3 rounded-lg font-semibold text-sm md:text-base hover:bg-blue-500 transition">
+      Protect My Assets
+    </a>
+
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-20">
+
+  <div class="grid md:grid-cols-2 gap-6 md:gap-8 mb-16 md:mb-20">
+
+    <div class="card p-6 md:p-10">
+      <div class="flex items-center gap-3 mb-4">
+        <svg class="icon" fill="none" viewBox="0 0 24 24">
+          <path d="M12 3l8 4v5c0 5-8 9-8 9s-8-4-8-9V7l8-4z"/>
+        </svg>
+        <h3 class="text-lg md:text-2xl font-bold">Strategic Insurance</h3>
+      </div>
+      <p class="text-slate-300 text-sm md:text-base">
+        Life, health, and disability strategies designed to protect income, reduce risk, and create financial stability across all stages of life.
+      </p>
+    </div>
+
+    <div class="card p-6 md:p-10">
+      <div class="flex items-center gap-3 mb-4">
+        <svg class="icon" fill="none" viewBox="0 0 24 24">
+          <path d="M3 17l6-6 4 4 8-8"/>
+          <path d="M14 7h7v7"/>
+        </svg>
+        <h3 class="text-lg md:text-2xl font-bold">Wealth Optimization</h3>
+      </div>
+      <p class="text-slate-300 text-sm md:text-base">
+        Structuring your assets and cash flow to improve efficiency, maintain liquidity, and position your money for long-term growth.
+      </p>
+    </div>
+
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-6 md:gap-8">
+
+    <div class="card p-6 md:p-8">
+      <div class="flex items-center gap-3 mb-3">
+        <svg class="icon" fill="none" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="8"/>
+          <path d="M12 8v8M9 10h6M9 14h6"/>
+        </svg>
+        <h3 class="font-semibold text-base md:text-lg">Estate & Retirement</h3>
+      </div>
+      <p class="text-slate-300 text-sm">
+        Creating income strategies and retirement structures that provide long-term security and flexibility.
+      </p>
+    </div>
+
+    <div class="card p-6 md:p-8">
+      <div class="flex items-center gap-3 mb-3">
+        <svg class="icon" fill="none" viewBox="0 0 24 24">
+          <circle cx="12" cy="8" r="4"/>
+          <path d="M6 20c0-4 12-4 12 0"/>
+        </svg>
+        <h3 class="font-semibold text-base md:text-lg">Trusts & Legacy</h3>
+      </div>
+      <p class="text-slate-300 text-sm">
+        Protecting assets, minimizing tax exposure, and ensuring a smooth transfer of wealth.
+      </p>
+    </div>
+
+    <div class="card p-6 md:p-8">
+      <div class="flex items-center gap-3 mb-3">
+        <svg class="icon" fill="none" viewBox="0 0 24 24">
+          <path d="M2 10l10-5 10 5-10 5-10-5z"/>
+          <path d="M6 12v4c0 2 12 2 12 0v-4"/>
+        </svg>
+        <h3 class="font-semibold text-base md:text-lg">Next Generation Planning</h3>
+      </div>
+      <p class="text-slate-300 text-sm">
+        Strategic planning for education, wealth transfer, and setting the next generation up for long-term success.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="px-6 py-20 text-center border-t border-white/10">
+  <p class="text-[10px] font-bold tracking-[0.4em] uppercase text-white-500">
+    JKM Strategies LLC | Building Wealth. Securing Futures.</p>
+<p class="text-[8px] md:text-[9px] text-slate-500 uppercase tracking-widest italic leading-loose">Analytical Precision. Human Connection.</p>
+</footer>
+
+<!-- MOBILE CTA -->
+<div class="mobile-cta">
+  <a href="intake.html" class="bg-blue-600 block text-center py-3 rounded-lg font-semibold text-sm">
+    Protect My Assets
+  </a>
+</div>
+
+</body>
+</html>

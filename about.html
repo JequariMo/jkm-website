@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About | JKM Strategies</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #020617; color: white; margin: 0; }
+    .glass { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(12px); }
+    
+    .reveal { opacity: 1; transform: translateY(0); transition: all 0.9s ease-out; }
+    @media (prefers-reduced-motion: no-preference) {
+      .reveal:not(.active) { opacity: 0; transform: translateY(30px); }
+    }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+
+    .nav { transition: all 0.35s ease; }
+    .nav.scrolled {
+      padding-top: 10px !important;
+      padding-bottom: 10px !important;
+      background: rgba(15, 23, 42, 0.95);
+    }
+
+    .shape-blob { position: absolute; filter: blur(80px); z-index: 0; opacity: 0.15; border-radius: 50%; pointer-events: none; }
+    
+    .mobile-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(2,6,23,0.9);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 10px 16px;
+      z-index: 50;
+    }
+
+    @media (min-width: 1024px) {
+      .mobile-cta { display: none; }
+    }
+
+    #mobile-menu-links.hidden { display: none; }
+  </style>
+</head>
+
+<body class="selection:bg-blue-500/30">
+
+<div class="relative overflow-hidden bg-[#020617]">
+  <div class="shape-blob w-96 h-96 bg-blue-600 -top-20 -left-20"></div>
+  
+  <nav id="navbar" class="nav sticky top-0 z-50 glass border-b border-white/5">
+    <div class="flex justify-between items-center px-8 py-5">
+      <h1 class="text-xl font-extrabold tracking-tighter">
+        <a href="index.html">JKM <span class="text-blue-500">STRATEGIES</span> <span class="text-[10px] text-slate-500 font-light italic ml-1">LLC</span></a>
+      </h1>
+      
+      <button id="menu-toggle" class="lg:hidden text-blue-500 font-bold text-xs uppercase tracking-widest outline-none">
+        Menu ☰
+      </button>
+
+      <div class="hidden lg:flex items-center space-x-6 text-[10px] font-bold uppercase tracking-[0.2em]">
+        <a href="about.html" class="text-blue-400">About</a>
+        <a href="financial.html" class="hover:text-blue-400 transition">Business Analysis</a>
+        <a href="insurance.html" class="hover:text-blue-400 transition">Asset Protection</a>
+        <a href="athlete.html" class="text-slate-500 hover:text-blue-400 transition">Athlete/NIL</a>
+        <a href="intake.html" class="px-5 py-2.5 bg-blue-600 rounded-lg text-white hover:bg-blue-500 transition ml-4">
+          Start Planning
+        </a>
+      </div>
+    </div>
+
+    <div id="mobile-menu-links" class="hidden lg:hidden px-8 pb-8 flex flex-col space-y-4 text-xs font-bold uppercase tracking-widest border-t border-white/5 pt-4">
+      <a href="about.html" class="block text-blue-400">About</a>
+      <a href="financial.html" class="block hover:text-blue-400">Business Analysis</a>
+      <a href="insurance.html" class="block hover:text-blue-400">Asset Protection</a>
+      <a href="athlete.html" class="block text-slate-500">Athlete/NIL</a>
+      <a href="intake.html" class="block text-blue-500 pt-2 italic">Optimize My Business →</a>
+    </div>
+  </nav>
+
+  <div class="max-w-6xl mx-auto px-6 py-16 md:py-24 relative z-10">
+    <header class="mb-16 md:mb-20 reveal">
+      <h2 class="text-4xl md:text-7xl font-black tracking-tight mb-6">Expertise Driven by <span class="text-blue-500 italic">Precision.</span></h2>
+      <p class="text-slate-400 text-lg md:text-2xl font-light leading-relaxed max-w-3xl">
+        At JKM Strategies, we specialize in helping businesses and athletes simplify complex financial landscapes through data-driven analysis and protective asset management.
+      </p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+      <div class="reveal order-2 md:order-1">
+        <h3 class="text-2xl md:text-3xl font-bold mb-6 text-white italic">Why JKM Strategies?</h3>
+        <p class="text-slate-400 leading-relaxed mb-8">
+          We combine over a decade of financial expertise with a down-to-earth approach. Our goal is to make professional-grade financial analysis accessible and actionable for those focused on growth and legacy.
+        </p>
+        <ul class="space-y-6">
+          <li class="flex items-start">
+            <span class="text-blue-500 mr-4 font-bold text-lg">✓</span> 
+            <span class="text-slate-300"><strong class="text-white">Analytical Precision:</strong> We use deep-dive auditing to find efficiencies and reduce waste.</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-500 mr-4 font-bold text-lg">✓</span> 
+            <span class="text-slate-300"><strong class="text-white">Transparent Communication:</strong> We skip the jargon and provide simplified, usable reporting.</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-500 mr-4 font-bold text-lg">✓</span> 
+            <span class="text-slate-300"><strong class="text-white">Strategic Protection:</strong> We prioritize your long-term health and risk mitigation.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="reveal order-1 md:order-2">
+        <div class="relative group">
+          <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-blue-400 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+          <div class="relative bg-slate-900 rounded-[2rem] overflow-hidden">
+             <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="Data Analysis" class="w-full h-full object-cover grayscale opacity-80">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-20 md:mt-32 p-10 md:p-20 bg-gradient-to-br from-blue-600 to-blue-800 rounded-[2.5rem] md:rounded-[3rem] text-center shadow-2xl shadow-blue-900/40 relative overflow-hidden reveal">
+      <div class="absolute top-0 right-0 -mr-10 -mt-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
+      <h3 class="text-3xl md:text-5xl font-extrabold mb-8 relative z-10 leading-tight">Ready to find your <br class="hidden md:block"> financial clarity?</h3>
+      <a href="intake.html" class="relative z-10 inline-block bg-white text-blue-700 px-10 py-5 rounded-2xl font-bold text-lg hover:bg-slate-100 transition transform hover:scale-105 shadow-xl">
+        Start Planning
+      </a>
+    </div>
+  </div>
+
+  <footer class="px-6 py-12 md:py-20 text-center border-t border-white/5 opacity-80">
+    <p class="text-[9px] md:text-[10px] font-bold tracking-[0.4em] uppercase mb-4 text-blue-500">JKM Strategies LLC | Building Wealth. Securing Futures.</p>
+    <p class="text-[8px] md:text-[9px] text-slate-500 uppercase tracking-widest italic leading-loose">Analytical Precision. Human Connection.</p>
+  </footer>
+</div>
+
+<div class="mobile-cta">
+  <a href="intake.html" class="bg-blue-600 block text-center py-3 rounded-xl font-bold text-sm">
+    Start Planning
+  </a>
+</div>
+
+<script>
+  const menuBtn = document.getElementById('menu-toggle');
+  const menuLinks = document.getElementById('mobile-menu-links');
+  
+  menuBtn.addEventListener('click', () => {
+    menuLinks.classList.toggle('hidden');
+  });
+
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
