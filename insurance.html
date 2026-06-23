@@ -264,5 +264,24 @@ McKinney, TX • 972-379-8009
 
 </footer>
 
+<script>
+const menuBtn = document.getElementById('menu-toggle');
+const menuLinks = document.getElementById('mobile-menu-links');
+
+if (menuBtn && menuLinks) {
+  menuBtn.addEventListener('click', () => {
+    menuLinks.classList.toggle('hidden');
+  });
+}
+
+const nav = document.getElementById('navbar');
+
+if (nav) {
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+  });
+}
+</script>
+
 </body>
 </html>
