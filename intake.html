@@ -27,7 +27,7 @@ body { font-family: 'Inter', sans-serif; background: #020617; color: white; }
 }
 
 .input-field:focus {
-  border-color: #3b82f6;
+  border-color: #d97706;
   background: #1e293b;
 }
 
@@ -44,8 +44,8 @@ body { font-family: 'Inter', sans-serif; background: #020617; color: white; }
 }
 
 .checkbox-item:hover {
-  background: rgba(59, 130, 246, 0.1);
-  border-color: rgba(59, 130, 246, 0.3);
+  background: rgba(217, 119, 6, 0.10);
+  border-color: rgba(217, 119, 6, 0.30);
 }
 
 select { color-scheme: dark; }
@@ -54,28 +54,35 @@ select { color-scheme: dark; }
 
 <body class="min-h-screen py-20 px-6">
 
-<!-- 🔥 NETLIFY DETECTION FALLBACK (CRITICAL) -->
+<!-- 🔥 NETLIFY DETECTION FALLBACK (FULL VERSION) -->
+
 <form name="client-intake" netlify hidden>
-  <input type="text" name="first_name">
+  <input type="text" name="First Name">
+  <input type="text" name="Last Name">
+  <input type="email" name="Email">
+  <input type="tel" name="Phone">
+  <input type="text" name="Client Type">
+  <input type="text" name="Primary Goal">
+  <input type="text" name="Interests">
+  <textarea name="Notes"></textarea>
 </form>
 
 <div class="max-w-3xl mx-auto">
 
-<a href="index.html" class="text-blue-500 font-bold text-xs uppercase tracking-widest mb-12 inline-block hover:text-blue-400">
+<a href="index.html" class="text-amber-500 font-bold text-xs uppercase tracking-widest mb-12 inline-block hover:text-amber-400">
 ← Back to Home
 </a>
 
 <header class="mb-12 text-center">
 <h1 class="text-4xl md:text-5xl font-black mb-6">
-Let’s Build Your <span class="text-blue-500 italic">Financial Strategy</span>
+Let’s Build Your <span class="text-amber-500 italic">Financial Strategy</span>
 </h1>
 
 <p class="text-slate-400 text-lg leading-relaxed max-w-2xl mx-auto">
-This is a structured analysis designed to identify inefficiencies, protect your assets, and optimize your financial system.
+Complete this brief form and we'll review your goals, challenges, and opportunities before reaching out with next steps.
 </p>
 </header>
 
-<!-- ✅ NETLIFY FORM -->
 <form name="client-intake"
       method="POST"
       data-netlify="true"
@@ -86,7 +93,6 @@ This is a structured analysis designed to identify inefficiencies, protect your 
 <input type="hidden" name="form-name" value="client-intake">
 <input type="hidden" name="subject" value="New Client Intake Submission">
 
-<!-- Honeypot -->
 <p class="hidden">
   <label>Don’t fill this out: <input name="bot-field"></label>
 </p>
@@ -95,11 +101,11 @@ This is a structured analysis designed to identify inefficiencies, protect your 
 <div class="grid md:grid-cols-2 gap-6">
 <div>
 <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">First Name</label>
-<input type="text" name="first_name" required class="input-field" placeholder="John">
+<input type="text" name="First Name" required class="input-field" placeholder="John">
 </div>
 <div>
 <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">Last Name</label>
-<input type="text" name="last_name" required class="input-field" placeholder="Doe">
+<input type="text" name="Last Name" required class="input-field" placeholder="Doe">
 </div>
 </div>
 
@@ -107,11 +113,11 @@ This is a structured analysis designed to identify inefficiencies, protect your 
 <div class="grid md:grid-cols-2 gap-6">
 <div>
 <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">Email Address</label>
-<input type="email" name="email" required class="input-field" placeholder="john@example.com">
+<input type="email" name="Email" required class="input-field" placeholder="john@example.com">
 </div>
 <div>
 <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">Phone Number</label>
-<input type="tel" name="phone" required class="input-field" placeholder="(555) 000-0000">
+<input type="tel" name="Phone" required class="input-field" placeholder="(555) 000-0000">
 </div>
 </div>
 
@@ -120,11 +126,11 @@ This is a structured analysis designed to identify inefficiencies, protect your 
 <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">
 What best describes you?
 </label>
-<select name="client_type" required class="input-field">
+<select name="Client Type" required class="input-field">
 <option value="" disabled selected>Select option</option>
-<option>Athlete</option>
-<option>Business Owner</option>
-<option>Individual</option>
+<option value="Athlete">Athlete</option>
+<option value="Business Owner">Business Owner</option>
+<option value="Individual">Individual</option>
 </select>
 </div>
 
@@ -133,12 +139,12 @@ What best describes you?
 <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">
 Primary Goal
 </label>
-<select name="goal" required class="input-field">
+<select name="Primary Goal" required class="input-field">
 <option value="" disabled selected>Select option</option>
-<option>Increase Cash Flow</option>
-<option>Reduce Taxes</option>
-<option>Protect Assets</option>
-<option>Build Long-Term Strategy</option>
+<option value="Increase Cash Flow">Increase Cash Flow</option>
+<option value="Reduce Taxes">Reduce Taxes</option>
+<option value="Protect Assets">Protect Assets</option>
+<option value="Build Long-Term Strategy">Build Long-Term Strategy</option><option value="Improve Business Finances">Improve Business Finances</option><option value="Prepare For Retirement">Prepare For Retirement</option><option value="Not Sure">Not Sure</option>
 </select>
 </div>
 
@@ -149,36 +155,42 @@ Areas of Interest (Select all that apply)
 </label>
 
 <div class="grid md:grid-cols-2 gap-3">
-<label class="checkbox-item"><input type="checkbox" name="interests" value="Revenue Growth"> Revenue Growth</label>
-<label class="checkbox-item"><input type="checkbox" name="interests" value="Tax Strategy"> Tax Strategy</label>
-<label class="checkbox-item"><input type="checkbox" name="interests" value="Bookkeeping"> Bookkeeping</label>
-<label class="checkbox-item"><input type="checkbox" name="interests" value="Business Setup"> Business Setup</label>
-<label class="checkbox-item"><input type="checkbox" name="interests" value="Insurance"> Insurance</label>
-<label class="checkbox-item"><input type="checkbox" name="interests" value="Retirement"> Retirement</label>
-<label class="checkbox-item md:col-span-2"><input type="checkbox" name="interests" value="Not Sure"> Not Sure / Need Guidance</label>
+<label class="checkbox-item"><input type="checkbox" name="Interests[]" value="Revenue Growth"> Revenue Growth</label>
+<label class="checkbox-item"><input type="checkbox" name="Interests[]" value="Tax Strategy"> Tax Strategy</label>
+<label class="checkbox-item"><input type="checkbox" name="Interests[]" value="Bookkeeping"> Bookkeeping</label>
+<label class="checkbox-item"><input type="checkbox" name="Interests[]" value="Business Setup"> Business Setup</label>
+<label class="checkbox-item"><input type="checkbox" name="Interests[]" value="Insurance"> Insurance</label>
+<label class="checkbox-item"><input type="checkbox" name="Interests[]" value="Retirement"> Retirement</label>
+<label class="checkbox-item md:col-span-2"><input type="checkbox" name="Interests[]" value="Not Sure"> Not Sure / Need Guidance</label>
 </div>
 </div>
 
 <!-- NOTES -->
-<textarea name="notes" class="input-field" placeholder="Additional notes about your situation..."></textarea>
+<textarea name="Notes" class="input-field" placeholder="Additional notes about your situation..."></textarea>
 
 <!-- CTA -->
-<button type="submit" class="w-full bg-blue-600 hover:bg-blue-500 py-6 rounded-2xl font-bold text-xl transition">
-Request My Strategy
-</button>
+<p class="text-center text-slate-400 mb-6">No obligation. No pressure. Just a conversation about your goals and opportunities.</p><button type="submit" class="w-full bg-amber-600 hover:bg-amber-500 py-6 rounded-2xl font-bold text-xl transition">Start My Financial Review</button>
 
 </form>
 </div>
 
-<!-- FOOTER -->
-<footer class="px-6 py-20 text-center border-t border-white/5 opacity-80">
-  <p class="text-[10px] font-bold tracking-[0.4em] uppercase mb-4 text-blue-500">
-    JKM Strategies LLC | Building Wealth. Securing Futures.
+<div class="text-center mt-16 pt-8 border-t border-white/10">
+
+  <p class="text-[10px] font-bold tracking-[0.4em] uppercase text-amber-500 mb-4">
+    JKM STRATEGIES LLC
   </p>
-  <p class="text-[9px] text-slate-500 uppercase tracking-widest italic leading-loose">
-    Analytical Precision. Human Connection.
+
+  <p class="text-sm text-slate-400">
+    Building Wealth. Securing Futures.
   </p>
-</footer>
+
+  <p class="text-xs text-slate-500 mt-4 leading-relaxed">
+    8751 Collin McKinney Parkway, Suite 1102 #1035<br>
+    McKinney, TX 75070<br>
+    972-379-8009
+  </p>
+
+</div>
 
 </body>
 </html>
