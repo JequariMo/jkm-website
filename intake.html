@@ -81,7 +81,6 @@ select { color-scheme: dark; }
 
 <header class="mb-12 text-center">
 
-
 <form name="client-intake"
       method="POST"
       data-netlify="true"
@@ -127,9 +126,11 @@ What best describes you?
 </label>
 <select name="Client Type" required class="input-field">
 <option value="" disabled selected>Select option</option>
-<option value="Athlete">Athlete</option>
+<option value="Individual or Family">Individual or Family</option>
 <option value="Business Owner">Business Owner</option>
-<option value="Individual">Individual</option>
+<option value="Athlete">Athlete</option>
+<option value="Entertainer or Creative Professional">Entertainer or Creative Professional</option>
+<option value="Other">Other</option>
 </select>
 </div>
 
@@ -140,32 +141,25 @@ Primary Goal
 </label>
 <select name="Primary Goal" required class="input-field">
 <option value="" disabled selected>Select option</option>
-<option value="Increase Cash Flow">Increase Cash Flow</option>
-<option value="Reduce Taxes">Reduce Taxes</option>
-<option value="Protect Assets">Protect Assets</option>
-<option value="Build Long-Term Strategy">Build Long-Term Strategy</option><option value="Improve Business Finances">Improve Business Finances</option><option value="Prepare For Retirement">Prepare For Retirement</option><option value="Not Sure">Not Sure</option>
+<option value="Improve my overall financial position">Improve my overall financial position</option>
+<option value="Grow or improve my business">Grow or improve my business</option>
+<option value="Protect my family, income, or assets">Protect my family, income, or assets</option>
+<option value="Plan for retirement and long-term wealth">Plan for retirement and long-term wealth</option>
+<option value="Other / Not sure yet">Other / Not sure yet</option>
 </select>
 </div>
 
-<!-- INTERESTS -->
+<!-- OPTIONAL NOTES -->
 <div>
-<label class="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-4">
-Areas of Interest (Select all that apply)
-</label>
-
-<div class="grid md:grid-cols-2 gap-3">
-<label class="checkbox-item"><input type="checkbox" name="Interests[]" value="Revenue Growth"> Revenue Growth</label>
-<label class="checkbox-item"><input type="checkbox" name="Interests[]" value="Tax Strategy"> Tax Strategy</label>
-<label class="checkbox-item"><input type="checkbox" name="Interests[]" value="Bookkeeping"> Bookkeeping</label>
-<label class="checkbox-item"><input type="checkbox" name="Interests[]" value="Business Setup"> Business Setup</label>
-<label class="checkbox-item"><input type="checkbox" name="Interests[]" value="Insurance"> Insurance</label>
-<label class="checkbox-item"><input type="checkbox" name="Interests[]" value="Retirement"> Retirement</label>
-<label class="checkbox-item md:col-span-2"><input type="checkbox" name="Interests[]" value="Not Sure"> Not Sure / Need Guidance</label>
+  <label for="client-notes" class="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">
+    Anything you'd like us to know?
+  </label>
+  <p class="text-sm text-slate-400 mb-3">
+    Share a little about your financial goals, what's on your mind, or what you'd like help with. We'll take it from there.
+  </p>
+  <textarea id="client-notes" name="Notes" class="input-field" rows="4" placeholder="I'd love to get my finances organized, explore ways to protect my family, or figure out my next steps..."></textarea>
+  <p class="text-xs text-slate-500 mt-2">Optional — share as much or as little as you'd like.</p>
 </div>
-</div>
-
-<!-- NOTES -->
-<textarea name="Notes" class="input-field" placeholder="Additional notes about your situation..."></textarea>
 
 <!-- CTA -->
 <p class="text-center text-slate-400 mb-6">No obligation. No pressure. Just a conversation about your goals and opportunities.</p><button type="submit" class="w-full bg-amber-600 hover:bg-amber-500 py-6 rounded-2xl font-bold text-xl transition">Start My Financial Review</button>
