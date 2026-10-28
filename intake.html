@@ -88,7 +88,7 @@ select { color-scheme: dark; }
 </div>
 <div>
 <label class="block text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">Phone Number</label>
-<input type="tel" name="Phone" required class="input-field" placeholder="(555) 000-0000">
+<input type="tel" id="phone" name="Phone" required class="input-field" placeholder="(555) 000-0000" maxlength="14" pattern="^\(\d{3}\) \d{3}-\d{4}$" title="Please enter a valid 10-digit phone number: (555) 000-0000">
 </div>
 </div>
 
@@ -155,8 +155,34 @@ Primary Goal
     McKinney, TX 75070<br>
     972-379-8009
   </p>
-
 </div>
 
+  <script>
+    const phoneInput = document.getElementById('phone');
+
+    if (phoneInput) {
+      phoneInput.addEventListener('input', (e) => {
+        // 1. Remove all non-digit characters
+        let input = e.target.value.replace(/\D/g, '');
+        
+        // 2. Cap strictly at 10 digits
+        input = input.substring(0, 10);
+        
+        // 3. Auto-format into (XXX) XXX-XXXX
+        let formatted = '';
+        if (input.length > 0) {
+          formatted = '(' + input.substring(0, 3);
+        }
+        if (input.length >= 4) {
+          formatted += ') ' + input.substring(3, 6);
+        }
+        if (input.length >= 7) {
+          formatted += '-' + input.substring(6, 10);
+        }
+        
+        e.target.value = formatted;
+      });
+    }
+  </script>
 </body>
 </html>
